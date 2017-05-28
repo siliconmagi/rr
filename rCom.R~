@@ -109,29 +109,21 @@ DT[,sum(V1)]
 dt1 = data.frame(replicate(9,1:30))
 dt1
 
-# Store function, argument x, into A
+# apply function to column
 A = function(x) x+1
-
-# cbind
-# Ret0urn dataframe with columns 1:3, then apply function A to columns 4:9
-# 3rd argument: 1 applys to rows 2 applys to columns
-# lapply applys to columns 4:9
 cbind(dt1[1:3], apply(dt1[4:9],2, A) )
-cbind(dt1[1:3], lapply(dt1[4:9], A) )
-cbind(dt1[1:3], lapply(dt1[4:9], A) )
 
-# Return dataframe dt1, column 1
-dt1[1]
-
-# Return dataframe, columns 1:3, apply function B to columns 4:9
-B = function(x) paste(x,"1",sep="")
-cbind(dt1[1:3], lapply(dt1[4:9],B))
 # }}}
 
 # Functions {{{
+
 # function with arguments
 f1 <- function(x){
   x + 10
 }
+
 f1(5)
+
+
+
 # }}}
